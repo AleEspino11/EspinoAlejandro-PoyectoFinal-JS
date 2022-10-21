@@ -72,7 +72,31 @@ header h1{
 .liAtributes:hover {
   background-color: rgba(6, 230, 159, 0.993);
   border-radius: 5px ;
+  list-style: none;
 }
+
+
+.dropdown-menu {
+
+  padding: 0.25rem 1rem;
+ 
+  font-weight: 400;
+  color: #feffff;
+  background-color: #000d0e;
+ 
+
+}
+
+.dropdown-item {
+  color: aliceblue;
+
+}
+
+.dropdown-item:hover {
+  background-color: rgba(6, 230, 159, 0.993);
+  border-radius: 5px;
+}
+
 
 .buttonCarrito:hover {
   background-color: none;
