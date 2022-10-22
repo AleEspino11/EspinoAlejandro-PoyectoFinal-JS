@@ -5,6 +5,7 @@ const carritoIndex = (productoId)=>{
     const contenedorCarrito = document.getElementById("carrito-contenedor")
 
     const renderProductosCarrito = ()=> {
+    
 
        /*  const existe = carritoDeCompras.some (producto => producto.id === productoId)
            if (existe){
@@ -20,7 +21,8 @@ const carritoIndex = (productoId)=>{
         console.log(carritoDeCompras);
         producto.cantidad = 1
         contenedorCarrito.innerHTML = ""
-        }   */
+        }   sss.*/
+
         
         let producto  = productos.find((producto) => producto.id === productoId )
         carritoDeCompras.push(producto)
@@ -35,7 +37,7 @@ const carritoIndex = (productoId)=>{
 
             div.innerHTML = `<p>${producto.nombre}</p>
                         <p>Precio: ${producto.precio}</p> 
-                        <p id="cantidad${producto.id}">Cantidad:${producto.cantidad}</p>
+                        <p id="cantidad ${producto.id}">Cantidad:${producto.cantidad}</p>
                         <button id="${producto.id}"class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>`;
         contenedorCarrito.appendChild(div)
 
@@ -48,15 +50,15 @@ const carritoIndex = (productoId)=>{
             }
         })
 
-         const eliminarCarrito = document.getElementById(producto.id)
+         /* const eliminarCarrito = document.getElementById(producto.id)
          const divElement = document.getElementById(`div-${producto.id}`)
 
             console.log(eliminarCarrito);
             eliminarCarrito.addEventListener("click", (e)=>{
                 const indice = carritoDeCompras.findIndex(element => element.id === producto.id)
-                carritoDeCompras.splice (indice,1)
+                carritoDeCompras.splice(indice,1)
                 divElement.remove(1)
-            })
+            }) */
         contadorCarrito.innerText = carritoDeCompras.length
 
         } )
@@ -64,7 +66,7 @@ const carritoIndex = (productoId)=>{
 
         
     }
-
+    
     renderProductosCarrito()
 
    
