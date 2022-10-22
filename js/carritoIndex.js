@@ -1,13 +1,12 @@
-const carritoDeCompras = []
+const carritoDeCompras = [];
 
-const carritoIndex = (productoId)=>{
+const carritoIndex = (productoId) => {
+  const contenedorCarrito = document.getElementById("carrito-contenedor");
 
-    const contenedorCarrito = document.getElementById("carrito-contenedor")
+  const renderProductosCarrito = () => {
+    let total = 0
 
-    const renderProductosCarrito = ()=> {
-    
-
-       /*  const existe = carritoDeCompras.some (producto => producto.id === productoId)
+    /*  const existe = carritoDeCompras.some (producto => producto.id === productoId)
            if (existe){
             const producto = carritoDeCompras.map (producto =>{
                 if (producto.id === productoId){
@@ -23,53 +22,77 @@ const carritoIndex = (productoId)=>{
         contenedorCarrito.innerHTML = ""
         }   sss.*/
 
-        
-        let producto  = productos.find((producto) => producto.id === productoId )
-        carritoDeCompras.push(producto)
-        console.log(carritoDeCompras);
-        producto.cantidad = 1;
-        contenedorCarrito.innerHTML = ""
+    console.log(productos);
 
-        carritoDeCompras.forEach((producto) => {
-            let div = document.createElement("div")
-            div.classList.add("productoEnCarrito")
-            div.setAttribute ("id", `div-${producto.id}`)
+    let producto = productos.find((producto) => producto.id === productoId);
+    const indexProd = carritoDeCompras.findIndex(
+      (prodCarrito) => prodCarrito.id === producto.id
+    );
+    if (indexProd !== -1) {
+      carritoDeCompras[indexProd].cantidad++;
+      document.getElementById(
+        `cantidad ${producto.id}`
+      ).innerText = `Cantidad:${producto.cantidad}`;
+    } else {
+      carritoDeCompras.push(producto);
+      console.log(carritoDeCompras);
 
-            div.innerHTML = `<p>${producto.nombre}</p>
-                        <p>Precio: ${producto.precio}</p> 
-                        <p id="cantidad ${producto.id}">Cantidad:${producto.cantidad}</p>
-                        <button id="${producto.id}"class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>`;
-        contenedorCarrito.appendChild(div)
+      producto.cantidad = 1;
+      contenedorCarrito.innerHTML = "";
 
-        localStorage.setItem('carritoDeCompras', JSON.stringify(carritoDeCompras))
+      carritoDeCompras.forEach((producto) => {
+        let div = document.createElement("div");
+        div.classList.add("productoEnCarrito");
+        div.setAttribute("id", `div-${producto.id}`);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('carritoDeCompras')){
-                carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras"))
-               /*  renderProductosCarrito() */
-            }
-        })
+        div.innerHTML = `<p>${producto.nombre}</p>
+                            <p>Precio: ${producto.precio}</p> 
+                            <p id="cantidad ${producto.id}">Cantidad:${producto.cantidad}</p>
+                            <button id="${producto.id}"class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>`;
+        contenedorCarrito.appendChild(div);
 
-         /* const eliminarCarrito = document.getElementById(producto.id)
-         const divElement = document.getElementById(`div-${producto.id}`)
+        localStorage.setItem(
+          "carritoDeCompras",
+          JSON.stringify(carritoDeCompras)
+        );
 
-            console.log(eliminarCarrito);
-            eliminarCarrito.addEventListener("click", (e)=>{
-                const indice = carritoDeCompras.findIndex(element => element.id === producto.id)
-                carritoDeCompras.splice(indice,1)
-                divElement.remove(1)
-            }) */
-        contadorCarrito.innerText = carritoDeCompras.length
+        document.addEventListener("DOMContentLoaded", () => {
+          if (localStorage.getItem("carritoDeCompras")) {
+            carritoDeCompras = JSON.parse(
+              localStorage.getItem("carritoDeCompras")
+            );
+            /*  renderProductosCarrito() */
+          }
+        });
 
-        } )
-       
+        const eliminarCarrito = document.getElementById(producto.id);
+        const divElement = document.getElementById(`div-${producto.id}`);
 
-        
+        console.log(eliminarCarrito);
+        eliminarCarrito.addEventListener("click", (e) => {
+          const indice = carritoDeCompras.findIndex(
+            (element) => element.id === producto.id
+          );
+          carritoDeCompras.splice(indice, 1);
+          divElement.remove(1);
+          document.getElementById("contador-carrito").innerText =
+            carritoDeCompras.length;
+          total = 0  
+          carritoDeCompras.forEach((producto) => {
+            total += producto.cantidad * producto.precio;
+          });
+          document.getElementById("precioTotal").innerText = total;
+        });
+        document.getElementById("contador-carrito").innerText =
+          carritoDeCompras.length;
+      });
     }
-    
-    renderProductosCarrito()
 
-   
-} 
+    carritoDeCompras.forEach((producto) => {
+      total += producto.cantidad * producto.precio;
+    });
+    document.getElementById("precioTotal").innerText = total;
+  };
 
-
+  renderProductosCarrito();
+};

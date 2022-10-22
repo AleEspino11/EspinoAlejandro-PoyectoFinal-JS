@@ -1,10 +1,14 @@
-const mostrarProductos = (productos) => {
+const mostrarProductos = () => {
+
+    fetch('./js/stock.json')
+    .then((response) => response.json())
+    .then(data => {
     const contenedorProductos = document.getElementById("producto-contenedor")
 
-    productos.forEach(producto => {
+    data.productos.forEach(producto => {
         const div = document.createElement("div")
         div.classList.add("card")
-        div.innerHTML += `<div class="cardInt" style="width: 18rem;">
+        div.innerHTML += `<div class="cardInt">
                             <img src="${producto.img}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${producto.nombre}</h5>
@@ -35,7 +39,15 @@ const mostrarProductos = (productos) => {
         })
 
     })
+
+        localStorage.setItem("productos", JSON.stringify(data.productos));
+       
+    })
+
+    
 }
 
+let productosJson = localStorage.getItem("productos")
+let productos = JSON.parse(productosJson)
 
-mostrarProductos(productos)
+mostrarProductos()

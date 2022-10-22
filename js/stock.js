@@ -1,4 +1,4 @@
-const productos = [
+/* const productos = [
     {
         id:1,
         nombre:"Goku SSJ 4 - Benpresto",
@@ -39,12 +39,12 @@ const productos = [
         img:'src/img/5.jpg',
         cantidad:1
     },
-]
+] */
 
-localStorage.setItem("productos", JSON.stringify(productos));
+/* localStorage.setItem("productos", JSON.stringify(productos));
 let productosJson = localStorage.getItem("productos")
 productos = JSON.parse(productosJson)
-console.log(productos);
+console.log(productos); */
 
 
 
