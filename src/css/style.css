@@ -301,8 +301,3 @@ justify-content: flex-end;
 .footer-li {
   margin-bottom: 20px;
 }
-
-
-.swal2-confirm .swal2-styled .swal2-default-outline {
-  color: black;
-}
