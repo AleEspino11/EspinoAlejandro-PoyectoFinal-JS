@@ -13,7 +13,7 @@ const mostrarProductos = () => {
                             <div class="card-body">
                                 <h5 class="card-title">${producto.nombre}</h5>
                                 <p class="card-text">Descripción:  ${producto.desc}</p>
-                                <p class="card-text">Precio:$ ${producto.precio}</p>
+                                <p class="card-text">Precio: $${producto.precio}</p>
                                 <button class="btn" id=boton${producto.id}>Comprar <i class= "fas fa-shopping-cart"></i></button>
                             </div>
                         </div>`
@@ -29,13 +29,12 @@ const mostrarProductos = () => {
                   text: "Haz agregado un producto al carrito",
                   icon: "Exito",
                   confirmButtonColor: 'rgba(6, 230, 159, 0.993)',
-                  color: 'rgba(6, 230, 159, 0.993)',
-                  background: '#161515',  
+                  color: 'aliceblue',
+                  background: '#00090a',  
                   confirmButtonText: "Continuar",
-            
+                  
                 });
              
-            /* alert(`Se agrego el producto ${producto.nombre}`) */
         })
 
     })

@@ -193,9 +193,9 @@ margin-top: 20px;
 }
 
 .modal-carrito{
-  width: 40rem;
+  width: 50rem;
   height: auto;
-  background-color: #161515;
+  background-color: #00090a;
   padding: 10px;
   margin: 20px;
   border: solid 2px rgba(6, 230, 159, 0.993)
@@ -244,6 +244,65 @@ justify-content: flex-end;
 
 }
 
-.precioTotal {
+
+ .div-precioProducto {
+ display: flex;
+ justify-content: flex-end;
+} 
+.precioProducto{
+  background-color: rgba(6, 230, 159, 0.993);
+  margin:20px 0 20px 0 ;
+  border-radius: 2px;
+  padding: 5px;
+  color: black;
+  font-weight: 600;
+  
+}
+
+
+/*Footer*/
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin: 3vw 0 0 0;
+  padding: 20px;
+ 
+}
+.footer__nav ul {
+  list-style-type: none;
+  padding: 2px;
+}
+.footer__div {
+  margin-left: 10vw;
+  width: 100%;
+}
+.footer__div__h2 {
   color: aliceblue;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.footer__div .footer__div__img {
+  width: 25px;
+  margin: 10px 0 0 0;
+}
+.footer__div2 p {
+  margin: 20px 0 0 0px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.footer-li {
+  margin-bottom: 20px;
+}
+
+
+.swal2-confirm .swal2-styled .swal2-default-outline {
+  color: black;
 }

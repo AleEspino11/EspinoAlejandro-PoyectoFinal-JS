@@ -46,7 +46,7 @@ const carritoIndex = (productoId) => {
         div.setAttribute("id", `div-${producto.id}`);
 
         div.innerHTML = `<p>${producto.nombre}</p>
-                            <p>Precio: ${producto.precio}</p> 
+                            <p>Precio: $${producto.precio}</p> 
                             <p id="cantidad ${producto.id}">Cantidad:${producto.cantidad}</p>
                             <button id="${producto.id}"class="boton-eliminar"><i class="fa-solid fa-trash-can"></i></button>`;
         contenedorCarrito.appendChild(div);

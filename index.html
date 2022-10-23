@@ -21,6 +21,10 @@
         </div>
         <nav>
             <ul class="nav justify-content-end">
+
+                <li class="nav-item liAtributes">
+                    <a class="nav-link" href="./index.html">Inicio</a>
+                </li>
                 <li class="nav-item dropdown liAtributes li-products">
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Lista de Productos
@@ -54,11 +58,14 @@
         
             <div id="carrito-contenedor"></div>
 
-            <p class="precioProducto">Precio Total: <span id="precioTotal" class="precioTotal">0</span></p>
+              <div class="div-precioProducto">
+                <p class="precioProducto">Precio Total: <span id="precioTotal" class="precioTotal">0</span></p>
+              </div>
             
+
             <div class="div-btn-cerrar">
                 <button id="cerrar" class="btnCerrar">Cerrar</button>
-         </div>
+            </div>
         </div>
         
     </div>
@@ -66,12 +73,62 @@
 </main>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="./js/stock.js" ></script>
+<!-- <script src="./js/stock.js" ></script> -->
 <script src="./js/app.js" ></script>
 <script src="./js/carritoIndex.js"></script>
 <script src="./js/modal.js"></script>
 
 
+<div class="section-footer">
+
+
+    <footer class="footer">
+
+        <div class="footer__div">
+            
+            <h2 class="footer__div__h2">Lista de Productos:</h2>
+
+            <div class="footer__div2">
+                <p>Figuras</p>
+                <p>Ropa</p>
+                <p>Accesorios</p>
+                <p>Mangas</p>
+                <p>Comics</p>
+            </div>
+            
+        </div>
+
+         
+        <div class="footer__div">
+            
+            <div  class="footer__div2"></div>
+            <h2 class="footer__div__h2">Seguinos en:</h2>
+
+            <nav class="footer__nav">
+
+                <ul>
+                    <li class="footer-li"><a href="https://www.instagram.com/" target="_blank"><img src="./src/img/I.png" alt="" class="footer__div__img"></a></li>
+                    <li class="footer-li"><a href="https://www.facebook.com/" target="_blank"><img src="./src/img/F.png" alt="" class="footer__div__img"></a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="footer__div">
+
+                 <h2 class="footer__div__h2">My Anime Store:</h2>
+                 
+                 <div  class="footer__div2">
+                    <p>Contacto</p>
+                 </div>
+                 
+        </div>
+       
+        
+
+        
+    </footer>
+</div>
 
 </body>
 </html>
